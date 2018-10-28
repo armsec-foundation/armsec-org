@@ -1,0 +1,49 @@
+.btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-lg {
+  padding: 15px 40px;
+  font-size: 16px;
+  line-height: none;
+  border-radius: 4px;
+}
+
+.btn-red {
+  background-color: #de5a1c;
+  color: #fff;
+}
+
+.btn-yellow {
+  background-color: #fcd93b;
+  color: #2a2a2a;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.disabled:hover,
+  &[disabled]:hover {
+    opacity: 0.65;
+  }
+}
+
+.btn-green {
+  background-color: $darker-green-color;
+  color: #fff;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    color: #fff;
+  }
+
+  &.disabled:hover,
+  &[disabled]:hover {
+    color: #fff;
+    opacity: 0.65;
+  }
+}

@@ -1,0 +1,33 @@
+.hero-header {
+  background: $hero-background-color;
+  color: $default-color;
+  min-height: 600px;
+  padding: 5em;
+
+  h1 {
+    margin: 1em 0 0 0;
+  }
+
+  h3 {
+    margin-top: 1em;
+  }
+
+  h4 {
+    font-weight: normal;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    margin: 2em 0;
+  }
+
+  .logo {
+    max-width: 180px;
+  }
+
+  .btn {
+    margin-top: 3em;
+  }
+
+  .large-logo {
+    max-width: 100%;
+  }
+}
