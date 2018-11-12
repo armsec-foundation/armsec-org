@@ -3,8 +3,8 @@ import React from "react"
 import title from './title.png';
 import logo from './logo.png';
 
-export default () => {
-  return <div className="row hero-header" id="home">
+export default () => (
+  <div className="row hero-header" id="home">
     <div className="col-md-7">
       <img src={title} className="logo"
         alt="ArmSec Security Conference" />
@@ -12,7 +12,7 @@ export default () => {
       <h3>OWASP Security Conference</h3>
       <h4>24 November, 2018</h4>
       <a className="btn btn-lg btn-green" target="blank" href="#">
-        Register Now <span class="ti-arrow-right"></span>
+        Register Now <span className="ti-arrow-right"></span>
       </a>
     </div>
     <div className="col-md-5 hidden-xs">
@@ -20,5 +20,5 @@ export default () => {
         alt="ArmSec Security Conference" />
     </div>
   </div>
-}
+);
 

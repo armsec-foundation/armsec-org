@@ -1,4 +1,72 @@
+@import "themify";
+
 @import "template/variables";
 @import "template/base";
 @import "template/navigation";
 @import "template/buttons";
+@import "template/sections";
+@import "template/schedule";
+@import "template/speakers";
+@import "template/footer";
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .hero-header {
+    padding: 3em 1em 1em 1em;
+    text-align: center;
+    max-height: 550px;
+  }
+
+  .row.schedule {
+    padding-left: 10px;
+  }
+
+  .speaker .feature {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .footer-credit {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  ul.footer-menu {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+
+/* iPad Portrait */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-header {
+    padding: 3em 1em 1em 1em;
+    text-align: center;
+  }
+
+  .speaker .feature {
+    flex: 0 0 49%;
+    max-width: 49%;
+    margin-right: 7px;
+  }
+
+  ul.footer-menu {
+    margin-top: 0;
+  }
+}
+
+
+/* iPad Landscape */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .speaker .feature {
+    flex: 0 0 49%;
+    max-width: 49%;
+    margin-right: 9px;
+    height: 400px;
+  }
+}

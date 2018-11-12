@@ -1,0 +1,62 @@
+
+.speaker .feature {
+  width: 31.333333%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-right: 20px;
+  border: 3px solid $green-color;
+  border-radius: 5px;
+  /*height: 422px;*/
+}
+
+.speaker .feature:hover {
+  box-shadow: 3px 3px 10px $green-color;
+  transform: translateY(-10px);
+}
+
+.speaker h4 {
+  margin-top: 30px;
+}
+
+.speaker-img-none,
+.speaker-img-noborder,
+.speaker-img {
+  max-width: 40%;
+}
+
+.speaker-img,
+.speaker-img-noborder {
+  border-radius: 50%;
+}
+
+.speaker-img {
+  border: 4px solid #efefef;
+}
+
+ul.speaker-social li {
+  list-style: none;
+  display: inline-block;
+  margin: 10px 5px;
+}
+
+ul.speaker-social li a {
+  font-size: 0.2em;
+  padding: 0 10px;
+}
+
+ul.speaker-social li a:hover {
+  text-decoration: none;
+}
+
+a span[class^='ti-'] {
+  color: $green-color;
+}
+
+a span.ti-facebook {
+  color: #3b5998;
+}
+
+a span.ti-twitter-alt {
+  color: #4099ff;
+}
