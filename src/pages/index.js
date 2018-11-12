@@ -1,4 +1,5 @@
 import React from 'react';
+import {graphql} from 'gatsby';
 
 import '../styles/main.scss';
 import Header from '../components/header';
@@ -11,24 +12,20 @@ import Speakers from '../components/speakers';
 import Sponsors from '../components/sponsors';
 import Footer from '../components/footer';
 
-export default () => {
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: {edges},
+  },
+}) => {
+  const Talks = edges.map((edge) => {
+    return <Talk key={edge.node.id} talk={edge.node} />
+  });
   return <div className="container-fluid">
     <Header></Header>
     <Advantages></Advantages>
     <Schedule>
       <div className="row">
-        <Talk linkToSpeaker="#speaker-samvel-martirosyan"
-          fullName="Samvel Martirosyan"
-          timeSlot="10am to 10:30am"
-          title="Keynote"
-          excerpt="Annual 3W review: what, when, who in Armenia. And a lot of about near future."
-          />
-        <Talk linkToSpeaker="#speaker-samvel-martirosyan"
-          fullName="Samvel Martirosyan"
-          timeSlot="10am to 10:30am"
-          title="Keynote"
-          excerpt="Annual 3W review: what, when, who in Armenia. And a lot of about near future."
-          />
+        {Talks}
       </div>
     </Schedule>
     <About></About>
@@ -40,3 +37,27 @@ export default () => {
     <Footer />
   </div>
 }
+
+export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: {order: ASC, fields: [frontmatter___date]}
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            author
+            title
+            date
+            duration
+          }
+        }
+      }
+    }
+  }
+`

@@ -6,6 +6,14 @@ module.exports = {
         precision: 8,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/`,
+        name: "markdown-pages",
+      },
+    },
+    `gatsby-transformer-remark`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
