@@ -2,27 +2,34 @@ import React from "react"
 
 import speaker1 from '../talk/speaker-1.png';
 
-export default () => (
-  <div className="col-md-4 col-sm-6 feature">
-    <img src={speaker1} alt="Anton Lopanitsyn" className="speaker-img-none" />
-    <h3>Anton Lopanitsyn</h3>
-    <p>Anton is a security researcher, whitehat, bug bounty practicant, blogger, noob, script kiddie.<br /><br /></p>
+export default (props) => {
+  const {frontmatter: speaker} = props.speaker;
+  return <div className="col-md-4 col-sm-6 feature">
+    <img src={speaker1} alt={speaker.author} className="speaker-img-none" />
+    <h3>{speaker.author}</h3>
+    <p>{speaker.about}</p>
     <ul className="speaker-social">
+      {speaker.twitter &&
       <li>
-        <a href="https://twitter.com/i_bo0om">
+        <a href={speaker.twitter}>
           <span className="ti-twitter-alt"></span>
         </a>
       </li>
+      }
+      {speaker.github &&
       <li>
-        <a href="https://github.com/Bo0oM">
+        <a href={speaker.github}>
           <span className="ti-github"></span>
         </a>
       </li>
+      }
+      {speaker.website &&
       <li>
-        <a href="https://bo0om.ru">
+        <a href={speaker.website}>
           <span className="ti-world"></span>
         </a>
       </li>
+      }
     </ul>
   </div>
-);
+}

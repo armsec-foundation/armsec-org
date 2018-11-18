@@ -21,17 +21,14 @@
     text-transform: uppercase;
     font-weight: 600;
   }
-  
-  // .media.break {
-  //   margin-top: 3em;
-  // }
-  
-  // .media.break h4, 
-  // .media.break h5 {
-  //   font-size: 80%;
-  // }
 
-  // .media.break .media-heading {
-  //   padding-top: 3px;
-  // }
+  .milestone .media {
+    margin-top: 3em;
+    h4, h5 {
+      font-size: 80%;
+    }
+    .media-heading {
+      padding-top: 3px;
+    }
+  }
 }

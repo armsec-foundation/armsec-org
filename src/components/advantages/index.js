@@ -3,10 +3,7 @@ import React from 'react';
 import Feature from './feature';
 
 export default () => (
-  <div className="row me-row content-ct" style={{
-    backgroundColor: '#2f6b25',
-    color: '#000'
-  }}>
+  <div className="row me-row content-ct green">
     <div className="col-md-12">
       <h2 className="row-title">
         Why This Event Is Super Cool?

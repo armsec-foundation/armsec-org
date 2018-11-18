@@ -16,6 +16,10 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  &.list {
+    list-style: disc;
+  }
 }
 
 a {
@@ -28,5 +32,16 @@ a:hover,
 a:focus,
 a:active,
 a:visited {
+  color: $link-color;
   text-decoration: none;
+}
+
+a.link {
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited, & {
+    color: $link-color;
+    text-decoration: underline;
+  }
 }

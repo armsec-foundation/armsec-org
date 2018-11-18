@@ -1,62 +1,67 @@
+.speaker {
+  padding-left: 1%;
+  paddign-right: 1%;
 
-.speaker .feature {
-  width: 31.333333%;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  margin-right: 20px;
-  border: 3px solid $green-color;
-  border-radius: 5px;
-  /*height: 422px;*/
-}
+  .feature {
+    width: 32.333333%;
+    flex: 0 0 32.33333333%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-right: 1.5%;
+    border: 3px solid $green-color;
+    border-radius: 5px;
+    /*height: 422px;*/
 
-.speaker .feature:hover {
-  box-shadow: 3px 3px 10px $green-color;
-  transform: translateY(-10px);
-}
+    &:hover {
+      box-shadow: 3px 3px 10px $green-color;
+      transform: translateY(-10px);
+    }
 
-.speaker h4 {
-  margin-top: 30px;
-}
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
 
-.speaker-img-none,
-.speaker-img-noborder,
-.speaker-img {
-  max-width: 40%;
-}
+    > h3 {
+      margin-top: 10px;
+    }
+  }
 
-.speaker-img,
-.speaker-img-noborder {
-  border-radius: 50%;
-}
+  h4 {
+    margin-top: 30px;
+  }
 
-.speaker-img {
-  border: 4px solid #efefef;
-}
+  .speaker-img-none,
+  .speaker-img-noborder,
+  .speaker-img {
+    max-width: 40%;
+  }
 
-ul.speaker-social li {
-  list-style: none;
-  display: inline-block;
-  margin: 10px 5px;
-}
+  .speaker-img,
+  .speaker-img-noborder {
+    border-radius: 50%;
+  }
 
-ul.speaker-social li a {
-  font-size: 0.2em;
-  padding: 0 10px;
-}
+  .speaker-img {
+    border: 4px solid #efefef;
+  }
 
-ul.speaker-social li a:hover {
-  text-decoration: none;
-}
+  ul.speaker-social li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px 5px;
+  }
 
-a span[class^='ti-'] {
-  color: $green-color;
-}
+  ul.speaker-social li a {
+    font-size: 0.2em;
+    padding: 0 10px;
+  }
 
-a span.ti-facebook {
-  color: #3b5998;
-}
+  ul.speaker-social li a:hover {
+    text-decoration: none;
+  }
 
-a span.ti-twitter-alt {
-  color: #4099ff;
+  a span[class^='ti-'] {
+    color: $green-color;
+  }
 }
