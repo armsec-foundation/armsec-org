@@ -2,7 +2,7 @@ import React from "react";
 import classNames from 'class-names';
 
 import qualis from './logos/qualis.png';
-import uate from './logos/uate.png';
+import uate from './logos/uate.svg';
 import oneguard from './logos/1g.png';
 import skycryptor from './logos/skycryptor.png';
 import astgeek from './logos/astgeek.png';
