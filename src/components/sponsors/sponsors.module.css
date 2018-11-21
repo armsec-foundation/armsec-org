@@ -1,0 +1,14 @@
+.generalSponsor {
+  margin-top: 20px;
+  max-height: 250px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .sponsors img {
+    max-width: 250px;
+    margin-bottom: 30px;
+  }
+}
+

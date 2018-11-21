@@ -16,7 +16,7 @@ export default (props) => (
         Register Now <span className="ti-arrow-right"></span>
       </a>
     </div>
-    <div className="col-md-5 hidden-xs">
+    <div className="col-md-5 d-none d-md-block">
       <img src={logo} className="large-logo"
         alt="ArmSec Security Conference" />
     </div>

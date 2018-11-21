@@ -37,7 +37,9 @@ const IndexPage = ({
   },
 }) => {
   return <div className="container-fluid">
-    <Header></Header>
+    <Header
+      ticket="https://www.eventbrite.co.uk/e/armsec-2018-security-conference-tickets-52207101847">
+    </Header>
     <Advantages></Advantages>
     <Schedule coming={true}>
       <div className="row">
@@ -65,7 +67,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          excerpt
           frontmatter {
             type
             icon
@@ -78,9 +80,8 @@ export const pageQuery = graphql`
       }
     }
     speakers: allMarkdownRemark(
-      filter: {
-        frontmatter: { author: { ne: null } }
-      }
+      sort: {order: ASC, fields: [frontmatter___author]}
+      filter: {frontmatter: {type: {eq: "author"}}}
       limit: 100
     ) {
       edges {
@@ -89,9 +90,17 @@ export const pageQuery = graphql`
           frontmatter {
             author
             about
+            photo {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             twitter
             website
             github
+            gender
           }
         }
       }

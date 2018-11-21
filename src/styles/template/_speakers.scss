@@ -31,19 +31,13 @@
     margin-top: 30px;
   }
 
-  .speaker-img-none,
-  .speaker-img-noborder,
   .speaker-img {
     max-width: 40%;
-  }
-
-  .speaker-img,
-  .speaker-img-noborder {
-    border-radius: 50%;
-  }
-
-  .speaker-img {
-    border: 4px solid #efefef;
+    margin: auto;
+    img {
+      border-radius: 50%;
+      border: 4px solid #efefef;
+    }
   }
 
   ul.speaker-social li {

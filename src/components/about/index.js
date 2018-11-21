@@ -12,7 +12,7 @@ export default () => (
             The main topics of the conference are:
           </p>
           <p className="lead">
-            <ul class="list">
+            <ul className="list">
               <li>Armenian cybersecurity community's involvement in the digital transformation of the private sector and e-gov/gov-tech</li>
               <li>Armenia’s critical infrastructures’ protection from cyber attacks</li>
               <li>Public awareness of information security issues</li>
