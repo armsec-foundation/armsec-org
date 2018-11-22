@@ -2,7 +2,7 @@ import React from "react"
 
 import Organizer from './organizer';
 
-import armsec from './armsec.png';
+import armsec from './armsec.svg';
 import owasp from './owasp.png';
 import illuria from './illuria.png';
 import smartgate from './smartgate.jpg';

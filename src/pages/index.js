@@ -13,6 +13,7 @@ import Speakers from '../components/speakers';
 import Sponsors from '../components/sponsors';
 import Organizers from '../components/organizers';
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 const renderTalks = (talks) => {
   return talks.map((edge) => {
@@ -37,14 +38,13 @@ const IndexPage = ({
   },
 }) => {
   return <div className="container-fluid">
+    <SEO />
     <Header
       ticket="https://www.eventbrite.co.uk/e/armsec-2018-security-conference-tickets-52207101847">
     </Header>
     <Advantages></Advantages>
-    <Schedule coming={true}>
-      <div className="row">
-        {renderTalks(talks.edges)}
-      </div>
+    <Schedule>
+      {renderTalks(talks.edges)}
     </Schedule>
     <About></About>
     <Speakers>
@@ -61,7 +61,10 @@ export default IndexPage;
 export const pageQuery = graphql`
   query {
     talks: allMarkdownRemark(
-      sort: {order: ASC, fields: [frontmatter___date]}
+      filter: {frontmatter: {type: {
+        in: ["talk", "milestone", "panel", "empty"]
+      }}}
+      sort: {order: ASC, fields: [fileAbsolutePath, frontmatter___date]}
       limit: 100
     ) {
       edges {
@@ -71,7 +74,17 @@ export const pageQuery = graphql`
           frontmatter {
             type
             icon
-            author
+            authors
+            location
+            moderator
+            photos {
+              childImageSharp {
+                fluid(maxWidth: 200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            single
             title
             date
             duration
@@ -97,9 +110,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            twitter
-            website
-            github
             gender
           }
         }

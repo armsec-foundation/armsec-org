@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "armsec-website",
+  "description": "ArmSec Security Conference Website",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
@@ -12,7 +12,10 @@
     "class-names": "^1.0.0",
     "gatsby": "^2.0.46",
     "gatsby-image": "^2.0.20",
+    "gatsby-plugin-favicon": "^3.1.4",
     "gatsby-plugin-google-analytics": "^2.0.7",
+    "gatsby-plugin-offline": "^2.0.17",
+    "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sharp": "^2.0.12",
     "gatsby-remark-copy-linked-files": "^2.0.6",
@@ -24,6 +27,7 @@
     "node-sass": "^4.10.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-helmet": "^5.2.0",
     "update": "^0.7.4"
   }
 }

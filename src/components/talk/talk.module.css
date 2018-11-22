@@ -1,0 +1,21 @@
+.speaker {
+  width: 100px;
+  margin-left: -50px;
+}
+
+.speaker:first-child {
+  margin-left: 0;
+}
+
+.speaker img {
+  border-radius: 50%;
+}
+
+.location {
+  font-size: 80%;
+  font-weight: 300;
+}
+
+.body {
+  min-width: 50%;
+}

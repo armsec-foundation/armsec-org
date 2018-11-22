@@ -1,7 +1,7 @@
 ---
 type: "author"
 author: "Aram Mkhitaryan"
-about: "Director of Helix Consulting"
+about: "CEO Helix"
 photo: "./photos/aram-mkhitaryan.jpg"
 gender: "male"
 featured: true

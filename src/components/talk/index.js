@@ -1,7 +1,10 @@
 import React from "react";
 import moment from 'moment';
+import Img from 'gatsby-image';
+import classNames from 'class-names';
 
-import speakerMale from './speaker-male.png';
+import styles from './talk.module.css';
+// import speakerMale from './speaker-male.png';
 
 export default (props) => {
   const {frontmatter: talk} = props.talk;
@@ -9,14 +12,29 @@ export default (props) => {
   const end = moment(talk.date)
     .add(talk.duration, 'minutes')
     .format('hh:mma');
-  return <div className="col-md-6">
+  return <div className={'col-sm-12' + (talk.single ? '': ' col-lg-4')}>
     <div className="media">
-      <img className="mr-3"
-        alt={talk.author} src={talk.photo || speakerMale} />
-      <div className="media-body">
-        <h4 className="mt-0">{start} to {end}</h4>
-        <h5>{talk.title}</h5>
-        <p>{props.talk.excerpt}</p>
+      {talk.photos.length && talk.photos.map((photo, i) => (
+        <Img fluid={photo.childImageSharp.fluid}
+          alt={talk.authors[i]} className={styles.speaker}
+          style={{zIndex: talk.photos.length - i}}/>
+      ))}
+      <div className={classNames('media-body', styles.body)}>
+        <h4 className="mt-0">
+          {start} to {end}
+          <span
+            className={classNames('d-lg-none', 'd-xl-block', styles.location)}>
+            &nbsp; ({talk.location})
+          </span>
+        </h4>
+        <h5>
+          {talk.type === 'panel' && 'Panel Discussion: '}
+          {talk.title}
+        </h5>
+        {talk.type === 'panel' &&
+          <p><b>Moderator: {talk.moderator}</b></p>
+        }
+        <p>{talk.authors.join(', ')}</p>
       </div>
     </div>
   </div>

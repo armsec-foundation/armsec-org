@@ -9,8 +9,20 @@ export default (props) => (
       {props.coming && <Coming />}
       {!props.coming &&
         <div>
-          <h3 className="text-center">Manoogian Hall</h3>
-          {props.children}
+          <div className="row">
+            <h3 className="text-center d-lg-block d-none col-md-4">
+              Manoogian Hall
+            </h3>
+            <h3 className="text-center d-lg-block d-none col-md-4">
+              Room 113W
+            </h3>
+            <h3 className="text-center d-lg-block d-none col-md-4">
+              Room 114W
+            </h3>
+          </div>
+          <div className="row">
+            {props.children}
+          </div>
         </div>
       }
     </div>

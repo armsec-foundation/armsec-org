@@ -4,11 +4,13 @@ import moment from 'moment';
 import burger from './burger.png';
 import coffee from './coffee.png';
 import reg from './reg.png';
+import exit from './exit.png';
 
 const ICONS = {
   burger,
   coffee,
   reg,
+  exit,
 };
 
 export default (props) => {
