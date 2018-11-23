@@ -1,6 +1,6 @@
 .speaker {
   padding-left: 1%;
-  paddign-right: 1%;
+  padding-right: 1%;
 
   .feature {
     width: 32.333333%;
@@ -18,8 +18,16 @@
       transform: translateY(-10px);
     }
 
-    &:nth-child(3n) {
-      margin-right: 0;
+    @media (min-width: 1200px) {
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
     }
 
     > h3 {

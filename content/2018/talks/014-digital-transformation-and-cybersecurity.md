@@ -17,11 +17,11 @@ duration: 60
 single: true
 photos:
   - "../authors/photos/satenik-mnatsakanyan.png"
-  - "../authors/photos/speaker-female.png"
-  - "../authors/photos/speaker-male.png"
-  - "../authors/photos/speaker-male.png"
-  - "../authors/photos/speaker-female.png"
-  - "../authors/photos/speaker-male.png"
+  - "../authors/photos/arman-galstyan.jpg"
+  - "../authors/photos/avetik-kerobyan.jpg"
+  - "../authors/photos/leonid-avetisyan.jpg"
+  - "../authors/photos/kristina-mazmanyan.jpg"
+  - "../authors/photos/vahagn-mkhitaryan.jpg"
   - "../authors/photos/aram-mkhitaryan.jpg"
   - "../authors/photos/vahagn-poghosyan.jpg"
   - "../authors/photos/samvel-martirosyan.png"

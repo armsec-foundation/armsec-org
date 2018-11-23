@@ -30,4 +30,9 @@
   .large-logo {
     max-width: 100%;
   }
+
+  a > span[class^=ti] {
+    font-size: 2em;
+    padding: 10px;
+  }
 }

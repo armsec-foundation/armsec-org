@@ -26,10 +26,19 @@
 }
 
 .organizer {
-  > img {
+  @media (min-width: 1200px) {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  img {
     max-width: 80%;
     max-height: 100px;
     margin-bottom: 15px;
+  }
+
+  a {
+    color: #000;
   }
 }
 
