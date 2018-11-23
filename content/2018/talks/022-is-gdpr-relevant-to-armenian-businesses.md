@@ -12,7 +12,7 @@ duration: 50
 single: true
 photos:
   - "../authors/photos/ruben-muradyan.jpg"
-  - "../authors/photos/speaker-male.png"
-  - "../authors/photos/speaker-male.png"
-  - "../authors/photos/speaker-female.png"
+  - "../authors/photos/miroslav-mitev.jpg"
+  - "../authors/photos/rossen-pashov.jpg"
+  - "../authors/photos/gohar-aghababyan.jpg"
 ---

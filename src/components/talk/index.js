@@ -23,7 +23,7 @@ export default (props) => {
         <h4 className="mt-0">
           {start} to {end}
           <span
-            className={classNames('d-lg-none', 'd-xl-block', styles.location)}>
+            className={classNames('d-lg-none', 'd-xs-inline', styles.location)}>
             &nbsp; ({talk.location})
           </span>
         </h4>
