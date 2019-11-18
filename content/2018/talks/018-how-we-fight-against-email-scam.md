@@ -10,4 +10,5 @@ duration: 40
 photos:
   - "../authors/photos/gerasim-hovhannisyan.jpg"
   - "../authors/photos/avag-arakelyan.jpg"
+presentation: "https://armsec.org/presentations/2018/gerasim-hovhannisyan-avag-arakelyan-fighting-phishing-attacks.pptx"
 ---

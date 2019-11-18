@@ -88,6 +88,8 @@ export const pageQuery = graphql`
             title
             date
             duration
+            video
+            presentation
           }
         }
       }

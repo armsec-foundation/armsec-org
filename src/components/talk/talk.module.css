@@ -19,3 +19,9 @@
 .body {
   min-width: 50%;
 }
+
+.download-button {
+  height: 1.2em;
+  margin-bottom: 3px;
+  margin-left: 3px;
+}

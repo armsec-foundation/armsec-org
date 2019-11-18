@@ -3,6 +3,8 @@ import moment from 'moment';
 import Img from 'gatsby-image';
 import classNames from 'class-names';
 
+import download from './download.png';
+import video from './video.png';
 import styles from './talk.module.css';
 // import speakerMale from './speaker-male.png';
 
@@ -30,6 +32,20 @@ export default (props) => {
         <h5>
           {talk.type === 'panel' && 'Panel Discussion: '}
           {talk.title}
+          {talk.presentation &&
+            <a href={talk.presentation} target="_blank"
+              rel="noopener noreferrer">
+              <img src={download} alt="Download Presentation file"
+                className={styles.downloadButton}/>
+            </a>
+          }
+          {talk.video &&
+            <a href={talk.video} target="_blank"
+              rel="noopener noreferrer">
+              <img src={video} alt="Watch the video"
+                className={styles.downloadButton}/>
+            </a>
+          }
         </h5>
         {talk.type === 'panel' &&
           <p><b>Moderator: {talk.moderator}</b></p>

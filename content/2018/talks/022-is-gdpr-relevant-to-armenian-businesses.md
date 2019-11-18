@@ -15,4 +15,5 @@ photos:
   - "../authors/photos/miroslav-mitev.jpg"
   - "../authors/photos/rossen-pashov.jpg"
   - "../authors/photos/gohar-aghababyan.jpg"
+presentation: "https://armsec.org/presentations/2018/ruben-muradyan-gdpr-good-bad-ugly.pptx"
 ---
