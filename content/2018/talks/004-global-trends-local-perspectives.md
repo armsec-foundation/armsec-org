@@ -1,7 +1,7 @@
 ---
 type: "panel"
 title: "Global trends, local perspectives"
-location: "Manoogian Hall" 
+location: "Manoogian Hall"
 moderator: "Ashot Arzumanyan"
 authors:
   - Samvel Martirosyan

@@ -31,8 +31,12 @@
     max-width: 100%;
   }
 
-  a > span[class^=ti] {
-    font-size: 2em;
-    padding: 10px;
+  div.social {
+    margin-top: 3em;
+
+    a > span[class^=ti] {
+      font-size: 2em;
+      padding: 10px;
+    }
   }
 }

@@ -8,6 +8,10 @@ import Talk from '../components/talk';
 import Milestone from '../components/milestone';
 import Schedule from '../components/schedule';
 import About from '../components/about';
+import Speaker from '../components/speaker';
+import Speakers from '../components/speakers';
+import Sponsors from '../components/sponsors';
+import Organizers from '../components/organizers';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
 
@@ -18,16 +22,16 @@ const renderTalks = (talks) => {
     } else {
       return <Talk
         key={edge.node.id} talk={edge.node}
-        singleClassName="col-md-6" />
+        singleClassName="col-md-4" />
     }
   });
 };
 
-// const renderSpeakers = (speakers) => {
-//   return speakers.map((edge) => {
-//     return <Speaker key={edge.node.id} speaker={edge.node} />
-//   });
-// }
+const renderSpeakers = (speakers) => {
+  return speakers.map((edge) => {
+    return <Speaker key={edge.node.id} speaker={edge.node} />
+  });
+}
 
 const IndexPage = ({
   data: {
@@ -37,14 +41,18 @@ const IndexPage = ({
 }) => {
   return <div className="container-fluid">
     <SEO />
-    <Header date="23 November" year="2019"
-      ticket="https://www.eventbrite.co.uk/e/armsec-2019-security-conference-tickets-79786031167">
+    <Header date="24 November" year="2018">
     </Header>
     <Advantages></Advantages>
-    <Schedule cols={['Manoogian Hall', 'Room 113W']}>
+    <Schedule cols={['Manoogian Hall', 'Room 113W', 'Room 114W']}>
       {renderTalks(talks.edges)}
     </Schedule>
     <About></About>
+    <Speakers>
+      {renderSpeakers(speakers.edges)}
+    </Speakers>
+    <Organizers />
+    <Sponsors />
     <Footer />
   </div>
 }
@@ -59,14 +67,11 @@ export const pageQuery = graphql`
           in: ["talk", "milestone", "panel", "empty"],
         },
         date: {
-          gte: "2019-11-23 00:00:00",
-          lt: "2019-11-24 00:00:00"
+          gte: "2018-11-24 00:00:00",
+          lt: "2018-11-25 00:00:00"
         }
       }}
-      sort: {
-        order: ASC,
-        fields: [fileAbsolutePath, frontmatter___date]
-      }
+      sort: {order: ASC, fields: [fileAbsolutePath, frontmatter___date]}
       limit: 100
     ) {
       edges {

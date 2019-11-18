@@ -14,7 +14,8 @@ export default (props) => {
   const end = moment(talk.date)
     .add(talk.duration, 'minutes')
     .format('hh:mma');
-  return <div className={'col-sm-12' + (talk.single ? '': ' col-lg-4')}>
+  const className = `col-sm-12 ${talk.single ? '' : props.singleClassName}`
+  return <div className={className}>
     <div className="media">
       {talk.photos.length && talk.photos.map((photo, i) => (
         <Img fluid={photo.childImageSharp.fluid}

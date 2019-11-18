@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `ARMSec 2018 :: Security Conference`,
+    title: `ARMSec 2019 :: Security Conference`,
     description: `ArmSec Conference is an annual international cybersecurity conference aiming at strengthening the cybersecurity community in Armenia and discussing the latest cybersecurity problems. Participants of the conference will be both Armenian and foreign leading specialists.`,
     canonicalUrl: 'https://www.armsec.org',
     image: 'https://www.armsec.org/armsec.png',
