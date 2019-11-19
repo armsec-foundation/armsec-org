@@ -104,7 +104,10 @@ export const pageQuery = graphql`
     }
     speakers: allMarkdownRemark(
       sort: {order: ASC, fields: [frontmatter___author]}
-      filter: {frontmatter: {type: {eq: "author"}}}
+      filter: {
+        frontmatter: {type: {eq: "author"}}
+        fileAbsolutePath: {regex: "/2018\/authors/"}
+      }
       limit: 100
     ) {
       edges {

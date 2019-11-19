@@ -10,7 +10,8 @@ import Schedule from '../components/schedule';
 import About from '../components/about';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
-import Sponsors from '../components/sponsors';
+import Speaker from '../components/speaker';
+import Speakers from '../components/speakers';
 import Organizers from '../components/organizers';
 
 const renderTalks = (talks) => {
@@ -25,11 +26,11 @@ const renderTalks = (talks) => {
   });
 };
 
-// const renderSpeakers = (speakers) => {
-//   return speakers.map((edge) => {
-//     return <Speaker key={edge.node.id} speaker={edge.node} />
-//   });
-// }
+const renderSpeakers = (speakers) => {
+  return speakers.map((edge) => {
+    return <Speaker key={edge.node.id} speaker={edge.node} />
+  });
+}
 
 const IndexPage = ({
   data: {
@@ -48,7 +49,9 @@ const IndexPage = ({
       {renderTalks(talks.edges)}
     </Schedule>
     <About date="November 23, 9:00 AM"></About>
-    <Sponsors />
+    <Speakers>
+      {renderSpeakers(speakers.edges)}
+    </Speakers>
     <Organizers data={organizers.edges} />
     <Footer />
   </div>
@@ -103,7 +106,10 @@ export const pageQuery = graphql`
     }
     speakers: allMarkdownRemark(
       sort: {order: ASC, fields: [frontmatter___author]}
-      filter: {frontmatter: {type: {eq: "author"}}}
+      filter: {
+        frontmatter: {type: {eq: "author"}}
+        fileAbsolutePath: {regex: "/2019\/authors/"}
+      }
       limit: 100
     ) {
       edges {
