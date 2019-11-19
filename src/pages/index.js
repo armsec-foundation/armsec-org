@@ -10,6 +10,8 @@ import Schedule from '../components/schedule';
 import About from '../components/about';
 import Footer from '../components/footer';
 import SEO from '../components/seo';
+import Sponsors from '../components/sponsors';
+import Organizers from '../components/organizers';
 
 const renderTalks = (talks) => {
   return talks.map((edge) => {
@@ -33,6 +35,7 @@ const IndexPage = ({
   data: {
     talks,
     speakers,
+    organizers,
   },
 }) => {
   return <div className="container-fluid">
@@ -45,6 +48,8 @@ const IndexPage = ({
       {renderTalks(talks.edges)}
     </Schedule>
     <About date="November 23, 9:00 AM"></About>
+    <Sponsors />
+    <Organizers data={organizers.edges} />
     <Footer />
   </div>
 }
@@ -115,6 +120,29 @@ export const pageQuery = graphql`
               }
             }
             gender
+          }
+        }
+      }
+    }
+    organizers: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {fileAbsolutePath: {regex: "/2019\/organizers/"}}
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            name
+            url
+            description
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

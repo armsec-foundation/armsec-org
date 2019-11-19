@@ -37,6 +37,7 @@ const IndexPage = ({
   data: {
     talks,
     speakers,
+    organizers
   },
 }) => {
   return <div className="container-fluid">
@@ -51,7 +52,7 @@ const IndexPage = ({
     <Speakers>
       {renderSpeakers(speakers.edges)}
     </Speakers>
-    <Organizers />
+    <Organizers data={organizers.edges} />
     <Sponsors />
     <Footer />
   </div>
@@ -120,6 +121,29 @@ export const pageQuery = graphql`
               }
             }
             gender
+          }
+        }
+      }
+    }
+    organizers: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {fileAbsolutePath: {regex: "/2018\/organizers/"}}
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            name
+            url
+            description
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

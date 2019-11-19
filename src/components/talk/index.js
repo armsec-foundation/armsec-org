@@ -20,10 +20,10 @@ export default (props) => {
   }
   return <div className={className}>
     <div className="media">
-      {talk.photos.length && talk.photos.map((photo, i) => (
-        <Img fluid={photo.childImageSharp.fluid}
-          alt={talk.authors[i]} className={styles.speaker}
-          style={{zIndex: talk.photos.length - i}}/>
+      {talk.photos.length && talk.photos.map((photo, index) => (
+        <Img key={index} fluid={photo.childImageSharp.fluid}
+          alt={talk.authors[index]} className={styles.speaker}
+          style={{zIndex: talk.photos.length - index}}/>
       ))}
       <div className={classNames('media-body', styles.body)}>
         <h4 className="mt-0">

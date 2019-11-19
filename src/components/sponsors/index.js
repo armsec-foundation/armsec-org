@@ -10,7 +10,7 @@ import macadamian from './logos/macadamian.png';
 
 import styles from './sponsors.module.css';
 
-export default () => (
+export default (props) => (
   <div className="row me-row content-ct">
     <div className="col-md-12">
       <h2 className="row-title">Sponsors and Partners</h2>

@@ -25,16 +25,20 @@
   }
 }
 
+.organizers {
+  justify-content: center;
+}
+
 .organizer {
   @media (min-width: 1200px) {
     flex: 0 0 20%;
     max-width: 20%;
   }
 
-  img {
+  .gatsby-image-wrapper {
     max-width: 80%;
     max-height: 100px;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
   }
 
   a {

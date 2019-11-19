@@ -3,9 +3,10 @@ import Coming from '../coming';
 
 const renderCols = (cols) => {
   const colWidth = 12 / cols.length;
-  return cols.map((col) => {
+  return cols.map((col, index) => {
     return (
-      <h3 className={`text-center d-lg-block d-none col-md-${colWidth}`}>
+      <h3 key={index}
+        className={`text-center d-lg-block d-none col-md-${colWidth}`}>
         {col}
       </h3>
     )

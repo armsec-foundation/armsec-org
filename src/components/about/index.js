@@ -11,7 +11,7 @@ export default (props) => (
             <br />
             The main topics of the conference are:
           </p>
-          <p className="lead">
+          <div className="lead">
             <ul className="list">
               <li>Armenian cybersecurity community's involvement in the digital transformation of the private sector and e-gov/gov-tech</li>
               <li>Armenia’s critical infrastructures’ protection from cyber attacks</li>
@@ -22,7 +22,7 @@ export default (props) => (
               <li>APT type of attacks on Armenian governmental and private organizations</li>
               <li>Cybersecurity risks and cryptography in blockchain systems.</li>
             </ul>
-          </p>
+          </div>
           <p className="lead">
             Looking forward to meeting you all on {props.date}
           </p>
