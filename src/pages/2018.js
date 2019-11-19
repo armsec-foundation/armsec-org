@@ -47,7 +47,7 @@ const IndexPage = ({
     <Schedule cols={['Manoogian Hall', 'Room 113W', 'Room 114W']}>
       {renderTalks(talks.edges)}
     </Schedule>
-    <About></About>
+    <About date="November 24, 9:30 AM"></About>
     <Speakers>
       {renderSpeakers(speakers.edges)}
     </Speakers>

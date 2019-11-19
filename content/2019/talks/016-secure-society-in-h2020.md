@@ -4,8 +4,8 @@ title: "Secure Society in H2020"
 location: "113W"
 authors:
   - "Hripsime Mkrtchyan"
-date: "2019-11-23 12:00:00"
-duration: 30
+date: "2019-11-23 14:30:00"
+duration: 20
 photos:
-  - "../../2018/authors/photos/speaker-female.png"
+  - "../authors/photos/hripsime-mkrtchyan.jpg"
 ---

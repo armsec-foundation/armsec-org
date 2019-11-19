@@ -5,7 +5,7 @@ location: "113W"
 authors:
   - "Ruben Markosyan"
 date: "2019-11-23 11:30:00"
-duration: 30
+duration: 60
 photos:
   - "../../2018/authors/photos/ruben-markosyan.jpg"
 ---

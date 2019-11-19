@@ -1,6 +1,6 @@
 import React from "react"
 
-export default () => (
+export default (props) => (
   <div className="row me-row green about">
     <div className="col-md-12">
       <h2 className="row-title content-ct">About</h2>
@@ -24,7 +24,7 @@ export default () => (
             </ul>
           </p>
           <p className="lead">
-            Looking forward to meeting you all on November 24, 9:30 AM
+            Looking forward to meeting you all on {props.date}
           </p>
         </div>
       </div>

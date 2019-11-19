@@ -15,6 +15,9 @@ export default (props) => {
     .add(talk.duration, 'minutes')
     .format('hh:mma');
   const className = `col-sm-12 ${talk.single ? '' : props.singleClassName}`
+  if (talk.type === 'empty') {
+    return <div className={classNames(className, 'd-xs-none')}></div>
+  }
   return <div className={className}>
     <div className="media">
       {talk.photos.length && talk.photos.map((photo, i) => (

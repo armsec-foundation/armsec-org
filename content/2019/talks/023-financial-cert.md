@@ -8,5 +8,5 @@ authors:
 date: "2019-11-23 16:30:00"
 duration: 60
 photos:
-  - "../../2018/authors/photos/speaker-male.png"
+  - "../authors/photos/vache-kirakosyan.jpg"
 ---
