@@ -37,7 +37,9 @@ const IndexPage = ({
   data: {
     talks,
     speakers,
-    organizers
+    organizers,
+    generalSponsors,
+    sponsors,
   },
 }) => {
   return <div className="container-fluid">
@@ -52,8 +54,11 @@ const IndexPage = ({
     <Speakers>
       {renderSpeakers(speakers.edges)}
     </Speakers>
-    <Organizers data={organizers.edges} />
-    <Sponsors />
+    <Organizers data={organizers.edges} color="green" />
+    <Sponsors
+      title="Sponsors and Partners"
+      generalSponsors={generalSponsors.edges}
+      sponsors={sponsors.edges} />
     <Footer />
   </div>
 }
@@ -140,6 +145,58 @@ export const pageQuery = graphql`
             name
             url
             description
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    generalSponsors: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {
+        fileAbsolutePath: {regex: "/2018\/sponsors/"}
+        frontmatter: {general: {eq: true}}
+      }
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            general
+            url
+            name
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    sponsors: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {
+        fileAbsolutePath: {regex: "/2018\/sponsors/"}
+        frontmatter: {general: {ne: true}}
+      }
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            general
+            url
+            name
             logo {
               childImageSharp {
                 fluid(maxHeight: 100) {

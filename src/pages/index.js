@@ -12,6 +12,7 @@ import Footer from '../components/footer';
 import SEO from '../components/seo';
 import Speaker from '../components/speaker';
 import Speakers from '../components/speakers';
+import Sponsors from '../components/sponsors';
 import Organizers from '../components/organizers';
 
 const renderTalks = (talks) => {
@@ -37,6 +38,8 @@ const IndexPage = ({
     talks,
     speakers,
     organizers,
+    sponsors,
+    partners,
   },
 }) => {
   return <div className="container-fluid">
@@ -52,7 +55,12 @@ const IndexPage = ({
     <Speakers>
       {renderSpeakers(speakers.edges)}
     </Speakers>
+    <Sponsors title="Sponsors" color="green"
+      sponsors={sponsors.edges} />
     <Organizers data={organizers.edges} />
+    <Sponsors title="Partners" color="green"
+      sponsors={partners.edges}
+      size={1}/>
     <Footer />
   </div>
 }
@@ -142,6 +150,55 @@ export const pageQuery = graphql`
             name
             url
             description
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    sponsors: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {
+        fileAbsolutePath: {regex: "/2019\/sponsors/"}
+      }
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            general
+            url
+            name
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    partners: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {
+        fileAbsolutePath: {regex: "/2019\/partners/"}
+      }
+      limit: 10
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            url
+            name
             logo {
               childImageSharp {
                 fluid(maxHeight: 100) {

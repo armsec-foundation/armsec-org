@@ -3,7 +3,7 @@ import React from "react"
 import Organizer from './organizer';
 
 export default (props) => (
-  <div className="row me-row content-ct green">
+  <div className={`row me-row content-ct ${props.color ? 'green' : ''}`}>
     <div className="col-md-12 content-ct">
       <h2 className="row-title">Organizers</h2>
       <div className="row clearfix organizers">

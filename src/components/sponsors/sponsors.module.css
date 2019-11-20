@@ -5,6 +5,10 @@
   height: auto;
 }
 
+.sponsor {
+  max-height: 100px;
+}
+
 @media (max-width: 767px) {
   .sponsors img {
     max-width: 250px;
