@@ -5,7 +5,7 @@ location: "Manoogian Hall"
 authors:
   - "Alex Amiryan"
 date: "2019-11-23 17:00:00"
-duration: 60
+duration: 50
 photos:
   - "../../2018/authors/photos/alex-amiryan.jpg"
 ---
