@@ -1,6 +1,6 @@
 ---
 type: "talk"
-title: "Modern mobile spyware"
+title: "Modern Mobile Spyware: the end of [quasi] secure mobile communications for masses"
 location: "Manoogian Hall"
 authors:
   - "Ruben Muradyan"
