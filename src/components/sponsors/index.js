@@ -1,8 +1,8 @@
-import React from "react";
 import classNames from 'class-names';
 import Img from 'gatsby-image';
+import React from "react";
 
-import styles from './sponsors.module.css';
+import * as styles from './sponsors.module.css';
 
 const renderGeneralSponsors = (sponsors) => {
   return sponsors.map(({
