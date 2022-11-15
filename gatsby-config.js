@@ -11,36 +11,24 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        appName: 'ArmSec Conference', // Inferred with your package.json
-        appDescription: 'ArmSec Conference is an annual international cybersecurity conference aiming at strengthening the cybersecurity community in Armenia and discussing the latest cybersecurity problems. Participants of the conference will be both Armenian and foreign leading specialists',
-        developerName: 'Vahe Evoyan',
-        developerURL: 'https://evoyan.org',
-        lang: 'en-US',
-        background: '#000',
-        theme_color: '#000',
-        version: '1.0',
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          opengraph: true,
-          twitter: true,
-          yandex: true,
-          windows: true
-        }
+        name: 'ArmSec Conference',
+        short_name: 'ArmSec Conference',
+        start_url: '/',
+        background_color: '#000000',
+        theme_color: '#000000',
+        display: 'standalone',
+        icon: 'src/favicon.png',
+        description: 'ArmSec Conference is an annual international cybersecurity conference aiming at strengthening the cybersecurity community in Armenia and discussing the latest cybersecurity problems. Participants of the conference will be both Armenian and foreign leading specialists',
+        lang: 'en',
+        icon_options: {
+          purpose: 'any maskable',
+        },
       }
     },
     {
       resolve: `gatsby-plugin-sass`,
-      options: {
-        precision: 8,
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,

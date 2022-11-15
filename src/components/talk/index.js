@@ -1,11 +1,11 @@
-import React from "react";
-import moment from 'moment';
-import Img from 'gatsby-image';
 import classNames from 'class-names';
+import Img from 'gatsby-image';
+import moment from 'moment';
+import React from "react";
 
 import download from './download.png';
+import * as styles from './talk.module.scss';
 import video from './video.png';
-import styles from './talk.module.css';
 // import speakerMale from './speaker-male.png';
 
 export default (props) => {
