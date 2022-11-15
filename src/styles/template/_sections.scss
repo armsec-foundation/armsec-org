@@ -10,6 +10,11 @@
     background-color: #2f6b25;
     color: #000;
   }
+
+  &.black {
+    color: $green-color;
+    background-color: #000;
+  }
 }
 
 .row-title {

@@ -22,7 +22,7 @@ const renderTalks = (talks) => {
     } else {
       return <Talk
         key={edge.node.id} talk={edge.node}
-        singleClassName="col-md-4" />
+        singleClassName="col-md-6" />
     }
   });
 };
@@ -38,27 +38,29 @@ const IndexPage = ({
     talks,
     speakers,
     organizers,
-    generalSponsors,
     sponsors,
+    partners,
   },
 }) => {
   return <div className="container-fluid">
     <SEO />
-    <Header date="24 November" year="2018" subtitle="OWASP Security Conference">
+    <Header date="23 November" year="2019" subtitle="OWASP Security Conference"
+      ticket="https://www.eventbrite.co.uk/e/armsec-2019-security-conference-tickets-79786031167">
     </Header>
     <Advantages></Advantages>
-    <Schedule cols={['Manoogian Hall', 'Room 113W', 'Room 114W']}>
+    <Schedule cols={['Manoogian Hall', 'Room 113W']}>
       {renderTalks(talks.edges)}
     </Schedule>
-    <About date="November 24, 9:30 AM"></About>
+    <About date="November 23, 9:00 AM"></About>
     <Speakers>
       {renderSpeakers(speakers.edges)}
     </Speakers>
-    <Organizers data={organizers.edges} color="green" />
-    <Sponsors
-      title="Sponsors and Partners"
-      generalSponsors={generalSponsors.edges}
+    <Sponsors title="Sponsors" color="green"
       sponsors={sponsors.edges} />
+    <Organizers data={organizers.edges} />
+    <Sponsors title="Partners" color="green"
+      sponsors={partners.edges}
+      size={1}/>
     <Footer />
   </div>
 }
@@ -73,11 +75,14 @@ export const pageQuery = graphql`
           in: ["talk", "milestone", "panel", "empty"],
         },
         date: {
-          gte: "2018-11-24 00:00:00",
-          lt: "2018-11-25 00:00:00"
+          gte: "2019-11-23 00:00:00",
+          lt: "2019-11-24 00:00:00"
         }
       }}
-      sort: {order: ASC, fields: [fileAbsolutePath, frontmatter___date]}
+      sort: {
+        order: ASC,
+        fields: [fileAbsolutePath, frontmatter___date]
+      }
       limit: 100
     ) {
       edges {
@@ -111,7 +116,7 @@ export const pageQuery = graphql`
       sort: {order: ASC, fields: [frontmatter___author]}
       filter: {
         frontmatter: {type: {eq: "author"}}
-        fileAbsolutePath: {regex: "/2018\/authors/"}
+        fileAbsolutePath: {regex: "/2019\/authors/"}
       }
       limit: 100
     ) {
@@ -135,7 +140,7 @@ export const pageQuery = graphql`
     }
     organizers: allMarkdownRemark(
       sort: {order: ASC, fields: [fileAbsolutePath]}
-      filter: {fileAbsolutePath: {regex: "/2018\/organizers/"}}
+      filter: {fileAbsolutePath: {regex: "/2019\/organizers/"}}
       limit: 100
     ) {
       edges {
@@ -156,11 +161,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    generalSponsors: allMarkdownRemark(
+    sponsors: allMarkdownRemark(
       sort: {order: ASC, fields: [fileAbsolutePath]}
       filter: {
-        fileAbsolutePath: {regex: "/2018\/sponsors/"}
-        frontmatter: {general: {eq: true}}
+        fileAbsolutePath: {regex: "/2019\/sponsors/"}
       }
       limit: 100
     ) {
@@ -182,19 +186,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    sponsors: allMarkdownRemark(
+    partners: allMarkdownRemark(
       sort: {order: ASC, fields: [fileAbsolutePath]}
       filter: {
-        fileAbsolutePath: {regex: "/2018\/sponsors/"}
-        frontmatter: {general: {ne: true}}
+        fileAbsolutePath: {regex: "/2019\/partners/"}
       }
-      limit: 100
+      limit: 10
     ) {
       edges {
         node {
           id
           frontmatter {
-            general
             url
             name
             logo {

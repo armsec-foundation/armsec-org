@@ -1,66 +1,28 @@
+import { graphql } from 'gatsby';
 import React from 'react';
-import {graphql} from 'gatsby';
 
-import '../styles/main.scss';
-import Header from '../components/header';
-import Advantages from '../components/advantages';
-import Talk from '../components/talk';
-import Milestone from '../components/milestone';
-import Schedule from '../components/schedule';
 import About from '../components/about';
 import Footer from '../components/footer';
-import SEO from '../components/seo';
-import Speaker from '../components/speaker';
-import Speakers from '../components/speakers';
-import Sponsors from '../components/sponsors';
+import Header from '../components/header';
 import Organizers from '../components/organizers';
+import Section from '../components/section';
+import SEO from '../components/seo';
+import '../styles/main.scss';
 
-const renderTalks = (talks) => {
-  return talks.map((edge) => {
-    if (edge.node.frontmatter.type === 'milestone') {
-      return <Milestone key={edge.node.id} milestone={edge.node} />
-    } else {
-      return <Talk
-        key={edge.node.id} talk={edge.node}
-        singleClassName="col-md-6" />
-    }
-  });
-};
-
-const renderSpeakers = (speakers) => {
-  return speakers.map((edge) => {
-    return <Speaker key={edge.node.id} speaker={edge.node} />
-  });
-}
 
 const IndexPage = ({
   data: {
-    talks,
-    speakers,
+    cfp: {edges: [{node: {html: cfpContent}}]},
     organizers,
-    sponsors,
-    partners,
   },
 }) => {
   return <div className="container-fluid">
     <SEO />
-    <Header date="23 November" year="2019"
-      ticket="https://www.eventbrite.co.uk/e/armsec-2019-security-conference-tickets-79786031167">
+    <Header date="18 December" year="2022" subtitle="Cybersecurity Conference">
     </Header>
-    <Advantages></Advantages>
-    <Schedule cols={['Manoogian Hall', 'Room 113W']}>
-      {renderTalks(talks.edges)}
-    </Schedule>
-    <About date="November 23, 9:00 AM"></About>
-    <Speakers>
-      {renderSpeakers(speakers.edges)}
-    </Speakers>
-    <Sponsors title="Sponsors" color="green"
-      sponsors={sponsors.edges} />
-    <Organizers data={organizers.edges} />
-    <Sponsors title="Partners" color="green"
-      sponsors={partners.edges}
-      size={1}/>
+    <Section title="Call For Papers" color="green">{cfpContent}</Section>
+    <About date="December 18, 10:00 AM" color="black"></About>
+    <Organizers data={organizers.edges} color="green" />
     <Footer />
   </div>
 }
@@ -69,78 +31,27 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query {
-    talks: allMarkdownRemark(
-      filter: {frontmatter: {
-        type: {
-          in: ["talk", "milestone", "panel", "empty"],
-        },
-        date: {
-          gte: "2019-11-23 00:00:00",
-          lt: "2019-11-24 00:00:00"
-        }
-      }}
-      sort: {
-        order: ASC,
-        fields: [fileAbsolutePath, frontmatter___date]
-      }
-      limit: 100
-    ) {
-      edges {
-        node {
-          id
-          excerpt
-          frontmatter {
-            type
-            icon
-            authors
-            location
-            moderator
-            photos {
-              childImageSharp {
-                fluid(maxWidth: 200) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            single
-            title
-            date
-            duration
-            video
-            presentation
-          }
-        }
-      }
-    }
-    speakers: allMarkdownRemark(
-      sort: {order: ASC, fields: [frontmatter___author]}
+    cfp: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
       filter: {
-        frontmatter: {type: {eq: "author"}}
-        fileAbsolutePath: {regex: "/2019\/authors/"}
+        fileAbsolutePath: {regex: "/2022\/sections/"}
+        frontmatter: {title: {eq: "CFP"}}
       }
-      limit: 100
+      limit: 1
     ) {
       edges {
         node {
           id
+          html
           frontmatter {
-            author
-            about
-            photo {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            gender
+            title
           }
         }
       }
     }
     organizers: allMarkdownRemark(
       sort: {order: ASC, fields: [fileAbsolutePath]}
-      filter: {fileAbsolutePath: {regex: "/2019\/organizers/"}}
+      filter: {fileAbsolutePath: {regex: "/2022\/organizers/"}}
       limit: 100
     ) {
       edges {
@@ -150,55 +61,6 @@ export const pageQuery = graphql`
             name
             url
             description
-            logo {
-              childImageSharp {
-                fluid(maxHeight: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    sponsors: allMarkdownRemark(
-      sort: {order: ASC, fields: [fileAbsolutePath]}
-      filter: {
-        fileAbsolutePath: {regex: "/2019\/sponsors/"}
-      }
-      limit: 100
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            general
-            url
-            name
-            logo {
-              childImageSharp {
-                fluid(maxHeight: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    partners: allMarkdownRemark(
-      sort: {order: ASC, fields: [fileAbsolutePath]}
-      filter: {
-        fileAbsolutePath: {regex: "/2019\/partners/"}
-      }
-      limit: 10
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            url
-            name
             logo {
               childImageSharp {
                 fluid(maxHeight: 100) {

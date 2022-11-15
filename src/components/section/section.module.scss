@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/functions";
+@import '~bootstrap/scss/variables';
+@import "~bootstrap/scss/mixins";
+
+.custom-section {
+    div.lead ul {
+        @include make-col-offset(1);
+        list-style: disc;
+    }
+}

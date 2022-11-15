@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
 export default (props) => (
-  <div className="row me-row green about">
+  <div className={`row me-row about ${props.color ? props.color : 'green'}`}>
     <div className="col-md-12">
       <h2 className="row-title content-ct">About</h2>
       <div className="row justify-content-center">
@@ -24,7 +24,8 @@ export default (props) => (
             </ul>
           </div>
           <p className="lead">
-            Looking forward to meeting you all on {props.date}
+            <br />
+            Looking forward to meeting you all on <strong>{props.date}</strong>
           </p>
         </div>
       </div>
