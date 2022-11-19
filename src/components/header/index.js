@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import Image from "../image"
+import Image from "../image";
 
 export default (props) => (
   <div className="row hero-header" id="home">
@@ -10,7 +10,7 @@ export default (props) => (
           <Image src={`${props.year}/images/title.png`} className="logo"
             alt="ArmSec Security Conference" />
           <h1>Armenia’s premier security event</h1>
-          <h3>OWASP Security Conference</h3>
+          {props.subtitle && <h3>{props.subtitle}</h3>}
           <h4>{props.date}, {props.year}</h4>
           {props.ticket &&
             <a className="btn btn-lg btn-green" target="blank"
