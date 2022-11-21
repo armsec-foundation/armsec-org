@@ -26,7 +26,7 @@ export default (props) => (
             rel="noopener noreferrer">
             <span className="ti-twitter-alt"></span>
           </a>
-          <a href="https://www.facebook.com/events/1139665189534357/"
+          <a href={props.fbEvent}
             target="_blank" rel="noopener noreferrer">
             <span className="ti-facebook"></span>
           </a>

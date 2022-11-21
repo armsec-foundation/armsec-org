@@ -45,7 +45,8 @@ const IndexPage = ({
   return <div className="container-fluid">
     <SEO />
     <Header date="23 November" year="2019" subtitle="OWASP Security Conference"
-      ticket="https://www.eventbrite.co.uk/e/armsec-2019-security-conference-tickets-79786031167">
+      ticket="https://www.eventbrite.co.uk/e/armsec-2019-security-conference-tickets-79786031167"
+      fbEvent="https://www.facebook.com/events/1139665189534357/">
     </Header>
     <Advantages></Advantages>
     <Schedule cols={['Manoogian Hall', 'Room 113W']}>
