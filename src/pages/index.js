@@ -19,7 +19,8 @@ const IndexPage = ({
   return <div className="container-fluid">
     <SEO />
     <Header date="18 December" year="2022" subtitle="Cybersecurity Conference"
-      fbEvent="https://www.facebook.com/events/1516700898836612">
+      fbEvent="https://www.facebook.com/events/1516700898836612"
+      ticket="https://www.eventbrite.co.uk/e/armsec-2022-cybersecurity-conference-tickets-484018451217">
     </Header>
     <Section title="Call For Papers" color="green">{cfpContent}</Section>
     <About date="December 18, 10:00 AM" color="black"></About>
