@@ -8,6 +8,7 @@ import Header from '../components/header';
 import Organizers from '../components/organizers';
 import Section from '../components/section';
 import SEO from '../components/seo';
+import Sponsors from '../components/sponsors';
 import '../styles/main.scss';
 
 
@@ -15,6 +16,7 @@ const IndexPage = ({
   data: {
     cfp: {edges: [{node: {html: cfpContent}}]},
     organizers,
+    sponsors
   },
 }) => {
   return <div className="container-fluid">
@@ -25,7 +27,9 @@ const IndexPage = ({
     </Header>
     <Section title="Call For Papers" color="green">{cfpContent}</Section>
     <About date="December 18, 10:00 AM" color="black"></About>
-    <Organizers data={organizers.edges} color="green" />
+    <Sponsors title="Sponsors / Partners" color="green"
+      sponsors={sponsors.edges} />
+    <Organizers data={organizers.edges} />
     <Footer />
   </div>
 }
@@ -64,6 +68,31 @@ export const pageQuery = graphql`
             name
             url
             description
+            logo {
+              childImageSharp {
+                fluid(maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    sponsors: allMarkdownRemark(
+      sort: {order: ASC, fields: [fileAbsolutePath]}
+      filter: {
+        fileAbsolutePath: {regex: "/2022\/sponsors/"}
+      }
+      limit: 100
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            url
+            name
+            general
             logo {
               childImageSharp {
                 fluid(maxHeight: 100) {

@@ -9,6 +9,10 @@
   max-height: 100px;
 }
 
+.sponsors {
+  margin-top: 40px;
+}
+
 @media (max-width: 767px) {
   .sponsors img {
     max-width: 250px;
