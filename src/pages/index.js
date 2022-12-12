@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
+import logo from '../../content/2022/images/logo.png';
 import About from '../components/about';
 import Footer from '../components/footer';
 import Header from '../components/header';
@@ -17,7 +18,7 @@ const IndexPage = ({
   },
 }) => {
   return <div className="container-fluid">
-    <SEO />
+    <SEO image={logo}/>
     <Header date="18 December" year="2022" subtitle="Cybersecurity Conference"
       fbEvent="https://www.facebook.com/events/1516700898836612"
       ticket="https://www.eventbrite.co.uk/e/armsec-2022-cybersecurity-conference-tickets-484018451217">
