@@ -1,6 +1,6 @@
 ---
 general: false
-logo: "./logos/realschool.png"
+logo: "./logos/realschool-white.png"
 url: https://realschool.am
 name: Real School
 ---
