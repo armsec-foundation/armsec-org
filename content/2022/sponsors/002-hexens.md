@@ -1,6 +1,6 @@
 ---
 general: true
-logo: "./logos/hexens-white.png"
+logo: "./logos/hexens.png"
 url: https://hexens.io/
 name: HEXENS
 ---
