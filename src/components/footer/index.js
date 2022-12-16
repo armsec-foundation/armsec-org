@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-export default () => {
+export default (props) => {
   const year = (new Date()).getFullYear();
   return <div className="row footer">
     <div className="col-md-6 col-sm-6">
