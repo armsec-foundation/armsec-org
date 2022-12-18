@@ -1,6 +1,6 @@
 ---
 type: "talk"
-title: "Remnux: Reverse Engeneer's Swiss Army Knife"
+title: "Malware Information Sharing Platform"
 location: "Faculty Launge"
 authors:
   - "Artur Papyan"
