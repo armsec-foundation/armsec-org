@@ -6,7 +6,7 @@ authors:
   - "Davit Karapetyan"
   - "Narek Jilavyan"
   - "Hayk Andriasyan"
-date: "2022-12-18 15:30:00"
+date: "2022-12-18 15:40:00"
 duration: 120
 photos:
   - "../authors/photos/davit-karapetyan.jpg"
